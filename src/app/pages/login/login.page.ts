@@ -28,6 +28,7 @@ export class LoginPage implements OnInit {
             result.forEach(element => {
                   localStorage.setItem('role', element.role);
                   localStorage.setItem('valido', 'true');
+                  localStorage.setItem('id', element.id);
                   location.reload();
               });
             } else {

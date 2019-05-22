@@ -53,7 +53,7 @@ export class MoviesDetailsPage implements OnInit {
       return;
     }
     this.quadraReserva.qualElemento = '' + this.information[0].id;
-
+    this.quadraReserva.usuario = localStorage.getItem('id');
     this.quadraReservadaService.verificaQuadras(this.quadraReserva).subscribe(result => {
       console.log(result[0]);
       console.log(result);

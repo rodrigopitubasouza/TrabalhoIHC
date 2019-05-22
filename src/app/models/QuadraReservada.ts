@@ -5,4 +5,5 @@ export class QuadraReservada {
     public tipo: string;
     public horario;
     public data;
+    public usuario;
 }

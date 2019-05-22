@@ -26,7 +26,7 @@ export class QuadraReservadaService {
 
   verificaQuadras(quadraReservada: QuadraReservada): Observable<any> {
     // tslint:disable-next-line:max-line-length
-    return this.http.get(`${this.url}?qualElemento=${quadraReservada.qualElemento}&data=${quadraReservada.data}&horario=${quadraReservada.horario}`, { headers: this.headers });
+    return this.http.get(`${this.url}?qualElemento=${quadraReservada.qualElemento}&data=${quadraReservada.data}&horario=${quadraReservada.horario}&usuario=${quadraReservada.usuario}`, { headers: this.headers });
   }
 
   insereReservaQuadra(quadraReservada: QuadraReservada) {
