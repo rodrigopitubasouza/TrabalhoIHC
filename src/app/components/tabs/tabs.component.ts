@@ -6,11 +6,7 @@ import { Usuario } from 'src/app/models/Usuario';
     selector: 'tabs-component',
     templateUrl: 'tabs.component.html'
 })
-export class TabsComponent implements OnInit,OnChanges{
-    ngOnChanges(changes: SimpleChanges): void {
-        console.log("veio");
-        
-    }
+export class TabsComponent implements OnInit{
     @Input()
     usuario: Usuario = new Usuario();
     constructor(private router: Router) {

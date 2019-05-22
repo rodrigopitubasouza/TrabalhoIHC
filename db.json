@@ -1,18 +1,19 @@
 {
-    "usuarios": [
-      {
-        "id": 1,
-        "nome": "Rodrigo Pituba de Souza",
-        "email": "rp@teste.com",
-        "senha": "1234",
-        "role": "aluno"
-      },{
-        "id": 2,
-        "nome": "Vitor",
-        "email": "vh@teste.com",
-        "senha": "1234",
-        "role": "professor"
-      }
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Rodrigo Pituba de Souza",
+      "email": "rp@teste.com",
+      "senha": "1234",
+      "role": "aluno"
+    },
+    {
+      "id": 2,
+      "nome": "Vitor",
+      "email": "vh@teste.com",
+      "senha": "1234",
+      "role": "professor"
+    }
   ],
   "Quadras": [
     {
@@ -34,6 +35,54 @@
       "id": 4,
       "nome": "Campo de Baseball",
       "tipo": "baseball"
+    }
+  ],
+  "QuadrasReservada": [
+    {
+      "id": 0,
+      "qualElemento": "0",
+      "nome": "Campo de Baseball",
+      "tipo": "baseball",
+      "horario": "13:00",
+      "data": "22-05-2019"
+    },
+    {
+      "id": 1,
+      "data": "2021-05-22",
+      "horario": "16:00",
+      "qualElemento": "2"
+    },
+    {
+      "id": 2,
+      "data": "2019-05-23",
+      "horario": "19:00",
+      "qualElemento": "3"
+    },
+    {
+      "qualElemento": "0",
+      "nome": "Campo de Baseball",
+      "tipo": "baseball",
+      "horario": "14:00",
+      "data": "22-05-2019",
+      "id": 3
+    },
+    {
+      "data": "2020-05-22",
+      "horario": "19:00",
+      "qualElemento": "1",
+      "id": 4
+    },
+    {
+      "data": "2019-04-22",
+      "horario": "19:00",
+      "qualElemento": "4",
+      "id": 5
+    },
+    {
+      "data": "2022-05-22",
+      "horario": "19:00",
+      "qualElemento": "4",
+      "id": 6
     }
   ]
 }

@@ -28,7 +28,7 @@
 
   <ion-item>
     <ion-label>Data</ion-label>
-    <ion-datetime display-format=" DDD DD MMM, YYYY" min="2019" max="2050-12-31" placeholder="Selecione a Data"
+    <ion-datetime  (ionChange)="getData($event)" display-format=" DDD DD MMM, YYYY" min="2019" max="2050-12-31" placeholder="Selecione a Data"
     cancel-text="Cancelar" done-text="Confirmar"
     [monthNames]="mesCompleto"
     [monthShortNames]="mesCurto"
@@ -37,6 +37,7 @@
   </ion-item>
   <ion-item>
     <ion-label>Horário</ion-label>
-    <ion-datetime display-format=" HH:mm" cancel-text="Cancelar" done-text="Confirmar" hourValues="13,14,15,16,17,18,19" minuteValues="00"  placeholder="Selecione a Hora"></ion-datetime>
+    <ion-datetime (ionChange)="getHorario($event)" display-format=" HH:mm" cancel-text="Cancelar" done-text="Confirmar" hourValues="13,14,15,16,17,18,19" minuteValues="00"  placeholder="Selecione a Hora"></ion-datetime>
   </ion-item>
+  <ion-button (click)= "reservar()">Reservar Quadra</ion-button>
 </ion-content>
