@@ -1,0 +1,17 @@
+{
+    "usuarios": [
+      {
+        "id": 1,
+        "nome": "Rodrigo Pituba de Souza",
+        "email": "rp@teste.com",
+        "senha": "1234",
+        "role": "aluno"
+      },{
+        "id": 2,
+        "nome": "Vitor",
+        "email": "vh@teste.com",
+        "senha": "1234",
+        "role": "professor"
+      }
+  ] 
+}
