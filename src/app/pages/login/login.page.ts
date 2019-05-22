@@ -39,7 +39,9 @@ export class LoginPage implements OnInit {
     async presentToast() {
       const toast = await this.toastController.create({
         message: 'O e-mail ou a senha informada não está correta',
-        duration: 2000
+        duration: 2000,
+        color: 'danger',
+        position: 'middle'
       });
       toast.present();
     }

@@ -9,7 +9,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./movies-details.page.scss'],
 })
 export class MoviesDetailsPage implements OnInit {
-
+  diaCurto = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'];
+  diaCompleto = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+  mesCurto = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+  mesCompleto = ['janeiro', 'fevereiro', 'março'
+  , 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
   information =  null;
   constructor( private activatedoute: ActivatedRoute, private quadraService: QuadraService) { }
 
@@ -17,7 +21,6 @@ export class MoviesDetailsPage implements OnInit {
     let id = this.activatedoute.snapshot.paramMap.get('id');
     this.quadraService.getQuadras(id).subscribe(result => {
       this.information = result;
-      console.log(this.information);
     })
   }
 
