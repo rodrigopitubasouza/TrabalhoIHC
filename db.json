@@ -13,5 +13,22 @@
         "senha": "1234",
         "role": "professor"
       }
-  ] 
+  ],
+  "Quadras": [
+    {
+      "id": 1,
+      "nome": "Quadra de basquete",
+      "tipo": "basquete"
+    },
+    {
+      "id": 2,
+      "nome": "Quadra de futsal",
+      "tipo": "futsal"
+    },
+    {
+      "id": 3,
+      "nome": "Campo de Futebol",
+      "tipo": "futebol"
+    }
+  ]
 }

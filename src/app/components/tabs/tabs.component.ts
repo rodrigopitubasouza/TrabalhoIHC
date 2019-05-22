@@ -1,22 +1,32 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Router } from '@angular/router';
+import { Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
 import { Usuario } from 'src/app/models/Usuario';
 
 @Component({
     selector: 'tabs-component',
     templateUrl: 'tabs.component.html'
 })
-export class TabsComponent implements OnInit{
+export class TabsComponent implements OnInit,OnChanges{
+    ngOnChanges(changes: SimpleChanges): void {
+        console.log("veio");
+        
+    }
     @Input()
-    usuario: Usuario;
-    constructor() {
+    usuario: Usuario = new Usuario();
+    constructor(private router: Router) {
 
     }
 
     ngOnInit() {
         this.usuario.role = localStorage.getItem('role');
+        if(this.usuario.role) {
+            this.router.navigate(['']);
+        }
     }
 
+    
     sair() {
         localStorage.clear();
+        location.reload();
     }
 }

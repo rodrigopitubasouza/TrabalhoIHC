@@ -1,3 +1,4 @@
+import { QuadraService } from './../../services/quadra.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MovieService, SearchType } from './../../services/movie.service';
@@ -10,17 +11,15 @@ import { MovieService, SearchType } from './../../services/movie.service';
 export class MoviesPage implements OnInit {
 
   results: Observable<any>;
-  searchTerm = '';
-  type: SearchType = SearchType.all;
 
-  constructor(private movieService: MovieService) { }
+  constructor(private quadraService: QuadraService) { }
 
   ngOnInit() {
+    this.results = this.quadraService.getAllQuadras();
   }
 
   searchChanged() {
-    
-    this.results = this.movieService.serachData(this.searchTerm, this.type);
+    this.results = this.quadraService.getAllQuadras();
   }
 
 }

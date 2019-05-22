@@ -1,3 +1,4 @@
+import { QuadraService } from './../../services/quadra.service';
 import { MovieService } from './../../services/movie.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -10,14 +11,13 @@ import { ActivatedRoute } from '@angular/router';
 export class MoviesDetailsPage implements OnInit {
 
   information =  null;
-  constructor( private activatedoute: ActivatedRoute, private movieService: MovieService) { }
+  constructor( private activatedoute: ActivatedRoute, private quadraService: QuadraService) { }
 
   ngOnInit() {
     let id = this.activatedoute.snapshot.paramMap.get('id');
-    this.movieService.searchDetails(id).subscribe(result=>{
-      console.log('details', result);
+    this.quadraService.getQuadras(id).subscribe(result => {
       this.information = result;
-      
+      console.log(this.information);
     })
   }
 

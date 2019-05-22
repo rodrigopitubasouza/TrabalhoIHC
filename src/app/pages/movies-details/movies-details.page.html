@@ -3,7 +3,7 @@
     <ion-button size="small"slot="start">
       <ion-back-button fill="clear" text="" defaultHref="/"></ion-back-button>
     </ion-button>
-    <ion-title>{{ information?.Genre }}}</ion-title>
+    <ion-title> Reservar Quadra </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,10 +11,10 @@
   <ion-card>
     <ion-card-header>
       <ion-card-title>
-        {{ information?.Title}}
+        {{ information[0]?.nome}}
       </ion-card-title>
       <ion-card-subtitle>
-        {{ information?.Year }}
+        {{ information[0]?.tipo }}
       </ion-card-subtitle>
     </ion-card-header>
 
