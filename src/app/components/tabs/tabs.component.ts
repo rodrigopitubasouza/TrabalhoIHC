@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Router } from '@angular/router';
+import { Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
 import { Usuario } from 'src/app/models/Usuario';
 
 @Component({
@@ -7,16 +8,21 @@ import { Usuario } from 'src/app/models/Usuario';
 })
 export class TabsComponent implements OnInit{
     @Input()
-    usuario: Usuario;
-    constructor() {
+    usuario: Usuario = new Usuario();
+    constructor(private router: Router) {
 
     }
 
     ngOnInit() {
         this.usuario.role = localStorage.getItem('role');
+        if(this.usuario.role) {
+            this.router.navigate(['']);
+        }
     }
 
+    
     sair() {
         localStorage.clear();
+        location.reload();
     }
 }

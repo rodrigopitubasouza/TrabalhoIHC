@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Usuario } from '../models/Usuario';
+
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioService {
+export class QuadraService {
 
-  url = 'http://localhost:3000/usuarios';
+  url = 'http://localhost:3000/quadras';
   readonly headers = new HttpHeaders({
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*',
@@ -19,9 +19,13 @@ export class UsuarioService {
 
   constructor( private http: HttpClient) { }
 
-  confirmaLogin(usuario: Usuario): Observable<any>{
-    return this.http.get(`${this.url}?email=${usuario.email}&senha=${usuario.senha}`,{ headers: this.headers });
+  getAllQuadras(): Observable<any> {
+    return this.http.get(`${this.url}`, { headers: this.headers });
   }
 
- 
+  getQuadras(id): Observable<any> {
+    return this.http.get(`${this.url}?id=${id}`, { headers: this.headers });
+  }
+
+
 }
