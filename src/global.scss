@@ -9,3 +9,43 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+$verde-claro: #5cd69d;
+$verde-escuro: #1fa229;
+
+$gradiente: linear-gradient(to top right, $verde-claro, $verde-escuro);
+
+.gradiente {
+  background-image: $gradiente;
+
+  background: $verde-escuro;
+  background: -moz-linear-gradient(45deg, $verde-claro, $verde-escuro);
+  background: -webkit-gradient(
+    left bottom,
+    right top,
+    color-stop(0%, $verde-claro),
+    color-stop(100%, $verde-escuro)
+  );
+  background: -webkit-linear-gradient(45deg, $verde-claro, $verde-escuro);
+  background: -o-linear-gradient(45deg, $verde-claro, $verde-escuro);
+  background: -ms-linear-gradient(45deg, $verde-claro, $verde-escuro);
+  background: linear-gradient(45deg, $verde-claro, $verde-escuro);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5cd69d', endColorstr='#1fa229', GradientType=1 );
+}
+
+ion-toolbar {
+  color: white;
+  background: $gradiente;
+  background-image: $gradiente;
+}
+
+ion-tab-bar {
+  --background: $gradiente;
+  --color: $gradiente;
+
+  ion-tab-button {
+    --background: $verde-escuro;
+    --color: $verde-escuro 50%;
+    --color-selected: white;
+  }
+}
