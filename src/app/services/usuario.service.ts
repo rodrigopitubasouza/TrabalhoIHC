@@ -3,12 +3,10 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Usuario } from '../models/Usuario';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
-
   url = 'http://localhost:3000/usuarios';
   readonly headers = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -17,11 +15,12 @@ export class UsuarioService {
     'Access-Control-Expose-Headers': 'Authorization'
   });
 
-  constructor( private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  confirmaLogin(usuario: Usuario): Observable<any>{
-    return this.http.get(`${this.url}?email=${usuario.email}&senha=${usuario.senha}`,{ headers: this.headers });
+  confirmaLogin(usuario: Usuario): Observable<any> {
+    return this.http.get(
+      `${this.url}?email=${usuario.email}&senha=${usuario.senha}`,
+      { headers: this.headers }
+    );
   }
-
- 
 }
