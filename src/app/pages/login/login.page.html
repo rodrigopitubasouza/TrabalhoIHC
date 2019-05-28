@@ -1,16 +1,28 @@
 <app-header [titulo]="'Login'"></app-header>
 
+
 <ion-content>
-  <br>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit(form)" class="w-100 d-inline-flex">
   <ion-item>
     <ion-label>E-mail : </ion-label>
-    <ion-input type="email" placeholder="Digite seu E-mail" [(ngModel)]="usuario.email"></ion-input>
+    <ion-input type="email" formControlName= "email" placeholder="Digite seu E-mail" 
+    [ngClass]="{ 'is-invalid': submitted && form.password.errors }" email></ion-input>
   </ion-item>
-  <br>
+  <div *ngIf="submitted && form.email.errors" class="invalid-feedback">
+      <label class="message-validation" *ngIf="form.email.errors.required">O Campo E-mail é obrigatório!</label>
+      <label class="message-validation" *ngIf="form.email.errors.email">Por favor insira um E-mail valido</label>
+  </div>
   <ion-item>
     <ion-label>Senha : </ion-label>
-    <ion-input type="password" placeholder="Digite sua Senha" [(ngModel)]="usuario.senha"></ion-input>
+    <ion-input type="password" formControlName= "password" placeholder="Digite sua Senha" ></ion-input>
   </ion-item>
-  <br>
-  <ion-button color="primary" (click) = 'logar()'>Logar</ion-button>
+  <div *ngIf="submitted && form.password.errors" class="invalid-feedback">
+      <label class="message-validation" *ngIf="form.password.errors.required">O Campo Password é obrigatório!</label>
+      <label class="message-validation" *ngIf="form.password.errors.minlength">O Campo Password deve possuir pelo menos 4 digitos!</label>
+  </div>
+  <div class="center">
+    <ion-button type="submit" color="primary">Logar</ion-button>
+  </div>
+</form>
 </ion-content>
+
